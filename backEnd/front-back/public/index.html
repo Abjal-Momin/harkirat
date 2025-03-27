@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      
+      async function sumNumbers() {
+        const a = document.getElementById("a").value;
+        const b = document.getElementById("b").value;
+        const response = await axios.post("http://localhost:3000/sum", {
+          a: a,
+          b: b,
+          
+        });
+        console.log(response.data);
+      }
+    </script>
+  </head>
+ 
+  <body>
+    <input id="a" type="text" placeholder="First Number" /></input>
+    <input id="b" type="text" placeholder="Second Number" /></input>
+    <button onclick="sumNumbers()">Sum</button>
+  </body>
+  <!-- First run js code then server this folder by going to public npx serve -->
+</html>
